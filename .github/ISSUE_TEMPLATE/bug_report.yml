@@ -1,0 +1,121 @@
+name: 问题反馈
+description: 报告一个可以复现的问题（按键没反应、答案不对、崩溃等）
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量把下面的信息填完整——缺少日志和版本信息的问题通常无法定位。
+
+        提交前请先看一眼 [故障排查](../../blob/main/references/troubleshooting.md) 和 README 的「故障排查」章节。
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已经看过 README 的「故障排查」章节
+          required: true
+        - label: 我已经搜索过现有 issue，没有重复
+          required: true
+        - label: 我知道这个工具需要 Windows 和 Node.js >= 22
+          required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题出现在哪一步
+      options:
+        - 启动 / 安装
+        - 全局快捷键没反应
+        - 截图内容不对（截错屏幕、截到别的窗口）
+        - 模型读题错误 / 答案不正确
+        - 样例自检没有拦住错误答案
+        - 剪贴板没有内容 / 内容不对
+        - 配置 API key / 模型报错
+        - 浏览器模式（CDP）相关问题
+        - 其它
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 实际发生了什么
+      description: 描述你观察到的现象
+      placeholder: 例如：按下 Ctrl+Alt+J 后等了一分钟，剪贴板一直是空的，日志最后一行是 answer-rejected
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 你期望发生什么
+      placeholder: 例如：期望剪贴板里出现能通过样例的代码
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 越具体越好
+      placeholder: |
+        1. 打开某评测网站的题目页
+        2. 按 Ctrl+Alt+J
+        3. 等 30 秒
+        4. Ctrl+V 到编辑器，运行样例，输出不对
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志
+      description: |
+        `%LOCALAPPDATA%\dsh-auto-answer\logs\watch.log` 的最后 30 行左右。
+        请先删掉里面的 API key 和任何你不想公开的内容。
+      render: text
+      placeholder: |
+        {"event":"clipboard-cleared","ok":true,"sig":"d1a1c5f346c0x1"}
+        {"event":"vision-request","sig":"d1a1c5f346c0x1", ...}
+        {"event":"verify-result","sig":"d1a1c5f346c0x1","attempt":1,"lang":"python","ok":false,"samples":2}
+        [aa] sample 1 mismatch: expected "2.000" got "1.414"
+        {"event":"answer-rejected", ...}
+    validations:
+      required: false
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js 版本
+      description: 运行 `node --version` 的结果
+      placeholder: v22.11.0
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Windows 版本
+      placeholder: Windows 11 23H2
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: 使用的模型
+      description: 运行 `node scripts/aa.mjs solvers` 查看，只填模型名，不要填 API key
+      placeholder: gpt-6-astra
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: 截图、报错全文、或者你已经试过的办法
+    validations:
+      required: false

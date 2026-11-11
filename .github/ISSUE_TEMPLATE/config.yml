@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用文档 / 常见问题
+    url: https://github.com/mqu21539-cyber/auto-answer#目录
+    about: 安装、配置、快捷键、样例自检的说明都在 README 里
+  - name: 故障排查
+    url: https://github.com/mqu21539-cyber/auto-answer/blob/main/references/troubleshooting.md
+    about: 按键没反应、剪贴板空、HTTP 401/429、超时等常见问题的处理办法
+  - name: 安全问题
+    url: https://github.com/mqu21539-cyber/auto-answer/security/advisories/new
+    about: 发现凭据泄露或其它安全问题请走私密渠道，不要开公开 issue
