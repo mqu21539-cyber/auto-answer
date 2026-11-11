@@ -1,0 +1,30 @@
+﻿{
+  "name": "auto-answer",
+  "version": "1.0.0",
+  "description": "Capture the screen on a hotkey, solve the coding problem with a vision model, and put the code on the clipboard",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "os": [
+    "win32"
+  ],
+  "scripts": {
+    "selftest": "node scripts/aa.mjs selftest",
+    "setup": "node scripts/aa.mjs setup",
+    "solvers": "node scripts/aa.mjs solvers",
+    "stop": "node scripts/aa.mjs stop-watch",
+    "test:unit": "node scripts/test-lang.mjs && node scripts/test-stub.mjs && node scripts/test-identity.mjs && node scripts/test-classify.mjs",
+    "test:solver": "node scripts/test-vision-solver.mjs && node scripts/test-solve-retry.mjs",
+    "test:desktop": "node scripts/test-auto.mjs && node scripts/test-silent.mjs && node scripts/test-supersede.mjs && node scripts/test-clip-retry.mjs && node scripts/test-hotkey-heal.mjs"
+  },
+  "keywords": [
+    "clipboard",
+    "screenshot",
+    "vision-model",
+    "windows",
+    "automation"
+  ],
+  "license": "MIT"
+}

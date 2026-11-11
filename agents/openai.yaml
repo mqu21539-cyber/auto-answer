@@ -1,0 +1,4 @@
+interface:
+  display_name: "auto-answer"
+  short_description: "后台无头 Chrome 读题、写码、注入答题框或复制到剪贴板"
+  default_prompt: "用 /auto-answer 在后台打开我的做题页面，识别当前题目并把答案填进答题框。"

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>自检用 ACM 题目页 · 求两数之和</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Microsoft YaHei", system-ui, sans-serif; background: #f5f6f8; }
+  header { background: #4b6cf0; color: #fff; padding: 10px 26px; font-size: 15px; }
+  .wrap { display: flex; gap: 16px; padding: 14px; height: calc(100vh - 42px); }
+  .left { flex: 1 1 46%; background: #fff; border: 1px solid #e3e5e9; border-radius: 6px; padding: 22px 26px; overflow: auto; }
+  .right { flex: 1 1 54%; background: #fff; border: 1px solid #e3e5e9; border-radius: 6px; padding: 14px; display: flex; flex-direction: column; }
+  h1 { font-size: 26px; margin: 0 0 10px; }
+  .meta { color: #8a8f99; font-size: 13px; margin-bottom: 18px; }
+  .sec { font-size: 17px; font-weight: 700; margin: 20px 0 10px; }
+  p, li { font-size: 16px; line-height: 1.75; color: #2b2f36; margin: 8px 0; }
+  .sample { border: 1px solid #e3e5e9; border-radius: 6px; padding: 14px 16px; margin: 10px 0; background: #fafbfc; }
+  .sample b { color: #4b6cf0; }
+  pre { margin: 8px 0 4px; font-family: Consolas, monospace; font-size: 15px; white-space: pre-wrap; }
+  .bar { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  select { font-size: 14px; padding: 3px 8px; }
+  textarea { flex: 1; width: 100%; font-family: Consolas, monospace; font-size: 15px; line-height: 1.6;
+             border: 1px solid #e3e5e9; border-radius: 6px; padding: 12px; resize: none; background: #1e1e1e; color: #d4d4d4; }
+</style>
+</head>
+<body>
+<header>全国高校计算机能力挑战赛 · 在线评测</header>
+<div class="wrap">
+  <div class="left">
+    <h1>A+B 问题</h1>
+    <div class="meta">时间：1000 ms ｜ 内存：128 MB ｜ 难度：简单</div>
+
+    <div class="sec">描述</div>
+    <p>给定两个整数 a 和 b，输出它们的和。</p>
+
+    <div class="sec">输入格式</div>
+    <p>一行，包含两个整数 a 和 b（-10<sup>9</sup> ≤ a, b ≤ 10<sup>9</sup>），中间用一个空格隔开。</p>
+
+    <div class="sec">输出格式</div>
+    <p>输出一个整数，表示 a 与 b 的和。</p>
+
+    <div class="sec">示例1</div>
+    <div class="sample">
+      <b>输入样例：</b>
+      <pre>1 2</pre>
+      <b>输出样例：</b>
+      <pre>3</pre>
+    </div>
+
+    <div class="sec">示例2</div>
+    <div class="sample">
+      <b>输入样例：</b>
+      <pre>-5 8</pre>
+      <b>输出样例：</b>
+      <pre>3</pre>
+    </div>
+
+    <div class="sec">示例3</div>
+    <div class="sample">
+      <b>输入样例：</b>
+      <pre>1000000000 -1000000000</pre>
+      <b>输出样例：</b>
+      <pre>0</pre>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="bar">
+      <span>代码编辑器</span>
+      <select><option>Python (Python 3.8)</option><option>Java</option><option>C++17</option></select>
+    </div>
+    <textarea spellcheck="false">import sys
+
+def main():
+    data = sys.stdin.buffer.read().split()
+    a, b = int(data[0]), int(data[1])
+    print(a - b)          # deliberately wrong: subtraction instead of addition
+    return a - b
+
+if __name__ == "__main__":
+    main()
+</textarea>
+  </div>
+</div>
+</body>
+</html>

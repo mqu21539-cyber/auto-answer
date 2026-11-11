@@ -1,0 +1,27 @@
+﻿# 运行时数据（正常情况下在 %LOCALAPPDATA%，这里兜底）
+solver.json
+tracker*.json
+watch.pid
+answers/
+shots/
+queue/
+logs/
+*.log
+*-trigger.txt
+trigger.txt
+
+# 依赖与构建
+node_modules/
+dist/
+build/
+
+# 环境变量
+.env
+.env.*
+
+# 编辑器与系统
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
